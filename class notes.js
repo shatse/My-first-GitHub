@@ -156,5 +156,38 @@ fetch('http://www.omdbapi.com/?apikey=[yourkey]&')
 // iterate over questions, count up isCorrect
 
 
+// Class 3/19
+
+
+// prime number activity
+
+const isPrime = n => {
+    if (n === 1) {
+        return false
+    }
+    for (let i =2; i < n; i++) {
+        if (n % i === 0) {
+            return false
+        }
+    }
+    return true
+}
+
+isPrime (17)
+isPrime (57)
+
+// to check for one, you can use return n >1 instead of return true
+// can also do return n > 1
+//              else {
+
+//       }      return false
+
+//  contructors that you build start with a capital letter
+
+// const adder
+
+// Error. Capital E. Passing a new one, put 'new' in front of Error.
+
+// 
 
 
