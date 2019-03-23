@@ -190,4 +190,82 @@ isPrime (57)
 
 // 
 
+//  to do list activity javascript 
+
+let toDos = []
+
+const renderToDos = _ => {
+  document.querySelector('#toDoList').innerHTML = ''
+  toDos.forEach((item, i) => {
+    let toDoElem = document.createElement('p')
+    toDoElem.textContent = item
+    toDoElem.className = 'listItem'
+    toDoElem.setAttribute('data-loc', i)
+    document.querySelector('#toDoList').append(toDoElem)
+  })
+}
+
+document.querySelector('#addToDo').addEventListener('click', e => {
+  e.preventDefault()
+  toDos.push(document.querySelector('#toDo').value)
+  document.querySelector('#toDo').value = ''
+  renderToDos()
+})
+
+document.addEventListener('click', ({ target }) => {
+  if (target.className === 'listItem') {
+    toDos.splice(target.dataset.loc, 1)
+    renderToDos()
+  }
+})
+
+renderToDos()
+
+// to do list html
+
+// <!DOCTYPE html>
+// <html lang="en">
+// <head>
+//   <meta charset="UTF-8">
+//   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+//   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+//   <title>Document</title>
+//   <link rel="stylesheet" href="./assets/css/style.css">
+// </head>
+// <body>
+//   <h1>To Do List App</h1>
+//   <form>
+//     <label for="toDo">To Do List Item:</label>
+//     <input type="text" name="toDo" id="toDo">
+//     <button id="addToDo">Add To List</button>
+//   </form>
+//   <hr>
+//   <div id="toDoList"></div>
+//   <script src="./assets/js/app.js"></script>
+// </body>
+// </html>
+
+localStorage
+sessionStorage
+
+// put something in storage, get something from storage, remove something from storage
+
+// add to storage
+localStorage.setItem('name', 'John')
+sessionStorage.setItem()
+
+// retrieve from storage
+localStorage.getItem()
+sessionStorage.getItem()
+
+// delete from storage
+localStorage.removeItem()
+sessionStorage.removeItem()
+
+// they work the same way. pair a key value to identify by, then you can use that
+// same value to remove, add, etc.
+
+// firebase is a lot like AWS. amazon web services
+
+// set up hosting to firebase
 
